@@ -1,65 +1,112 @@
+:root {
+    --glow: linear-gradient(270deg, #fae252, #2a18ff);
+    --theme-color: #23547a
+}
+
+/*@media screen and (min-aspect-ratio: 1/1) { ... }*/
+/*nice pink #ff346*/
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 html, body {
-  margin: 0 auto;
-  height: 100%;
+    margin: 0 auto;
+    height: 100%;
+    overflow-y: hidden;
 }
+.plane {
+    position: absolute;
+}
+
 body {
-  display: flex;
-  align-items: center;
-  font-family: monospace;
-  justify-content: center;
-  background-color: #1d212b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #151823;
 }
-div {
-  position: relative;
-  width: 30vw;
-  height: 30vw;
-  line-height: 30vw;
-  text-align: center;
-  color: #252b37;
-  background-color: #151823;
-  animation: textColor 10s ease infinite;
+.profile {
+    position: relative;
+    width: 50vmin;
+    height: 50vmin;
+    line-height: 50vmin;
+    color: #252b37;
+    background: url("images/profile.jpg");
+    background-size: 100% 100%;
+    border: solid #151823 1.5vmin;
+    border-radius: 100%;
+    transition: 1s;
+    animation: textColor 10s ease infinite;
 }
-div:after {
-  position: absolute;
-  content: "";
-  top: 5vw;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.75);
-  -webkit-filter: blur(5vw);
-  -moz-filter: blur(5vw);
-  -ms-filter: blur(5vw);
-  filter: blur(5vw);
-  background: linear-gradient(270deg, #0fffc1, #7e0fff);
-  background-size: 200% 200%;
-  animation: animateGlow 10s ease infinite;
+.profile::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    margin: 0 auto;
+        -webkit-filter: blur(5vmin);
+        -moz-filter: blur(5vmin);
+        -ms-filter: blur(5vmin);
+    filter: blur(5vmin);
+    background: var(--glow);
+    background-size: 300% 200%;
+    animation: animateGlow 10s ease infinite;
+}
+.profile:hover {
+    border: solid var(--theme-color) 1.5vmin;
 }
 @keyframes animateGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-@keyframes textColor {
-  0% {
-    color: #7e0fff;
-  }
-  50% {
-    color: #0fffc1;
-  }
-  100% {
-    color: #7e0fff;
-  }
+
+svg{
+    height:100vh;
+    width:100vw;
+    transition: 1s;
+}
+@media screen and (min-aspect-ratio: 1/1) { svg{transform: rotate(-90deg);height:100vw;width:100vh;} }
+
+path{
+    stroke: var(--theme-color);
+    stroke-linecap: round;
+    stroke-width: 10;
+}
+.pathway {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: -1000;
+    animation: animateStroke 5s linear;
+        -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+        -moz-animation-fill-mode: forwards;    /* FF 5+ */
+        -o-animation-fill-mode: forwards;      /* Not implemented yet */
+        -ms-animation-fill-mode: forwards;     /* IE 10+ */
+    animation-fill-mode: forwards;
+}
+.light {
+    stroke-dasharray: 20 980;
+    stroke-dashoffset: -1000;
+    animation: animateLight 5s linear infinite;
+}
+
+@keyframes animateStroke {
+    to {
+        stroke-dashoffset: 0;
+        opacity: 0.1;
+    }
+}
+@keyframes animateLight {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
