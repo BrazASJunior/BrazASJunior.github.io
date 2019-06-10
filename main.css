@@ -95,10 +95,16 @@ path{
         -ms-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
-.light {
-    stroke-dasharray: 20 980;
-    stroke-dashoffset: -1000;
-    animation: animateLight 5s linear infinite;
+
+ .light{
+    stroke-width: 8;
+ }
+@media screen and (min-aspect-ratio: 1/1) {
+    .light {
+        stroke-dasharray: 20 980;
+        stroke-dashoffset: -1000;
+        animation: animateLight 5s linear infinite;
+    }
 }
 
 @keyframes animateStroke {
