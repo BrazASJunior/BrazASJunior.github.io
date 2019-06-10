@@ -38,7 +38,7 @@ body {
     transition: 1s;
     animation: textColor 10s ease infinite;
 }
-@media screen and (min-aspect-ratio: 1/1) {}
+@media screen and (min-aspect-ratio: 1/1) {
     .profile::before {
         position: absolute;
         content: "";
