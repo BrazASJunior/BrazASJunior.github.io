@@ -38,23 +38,25 @@ body {
     transition: 1s;
     animation: textColor 10s ease infinite;
 }
-.profile::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    border-radius: 100%;
-    margin: 0 auto;
-        -webkit-filter: blur(5vmin);
-        -moz-filter: blur(5vmin);
-        -ms-filter: blur(5vmin);
-    filter: blur(5vmin);
-    background: var(--glow);
-    background-size: 300% 200%;
-    animation: animateGlow 10s ease infinite;
+@media screen and (min-aspect-ratio: 1/1) {}
+    .profile::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+        margin: 0 auto;
+            -webkit-filter: blur(5vmin);
+            -moz-filter: blur(5vmin);
+            -ms-filter: blur(5vmin);
+        filter: blur(5vmin);
+        background: var(--glow);
+        background-size: 300% 200%;
+        animation: animateGlow 10s ease infinite;
+    }
 }
 .profile:hover {
     border: solid var(--theme-color) 1.5vmin;
@@ -87,10 +89,10 @@ path{
     stroke-dasharray: 2000;
     stroke-dashoffset: -1000;
     animation: animateStroke 5s linear;
-        -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
-        -moz-animation-fill-mode: forwards;    /* FF 5+ */
-        -o-animation-fill-mode: forwards;      /* Not implemented yet */
-        -ms-animation-fill-mode: forwards;     /* IE 10+ */
+        -webkit-animation-fill-mode: forwards; 
+        -moz-animation-fill-mode: forwards;
+        -o-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 .light {
