@@ -5,6 +5,53 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Testing Page</title>
     <link rel="stylesheet" type="text/css" href="main.css"/>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="back plane"></div>
@@ -115,5 +162,58 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>Customer Service & Policies</h1>
+
+        <div class="section">
+            <h2>Contact Details</h2>
+            <p>Phone: <a href="tel:+123456789">+1 234 567 89</a></p>
+            <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+            <p>Address: 123 Customer Way, Business City, BC 12345</p>
+            <p>Online Messaging Service: <a href="https://messaging.example.com">Chat with us</a></p>
+
+            <form class="contact-form">
+                <h3>Contact Form</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Return Policy</h2>
+            <p>Products can be returned within 30 days of delivery. Please ensure items are in their original condition and packaging. Contact our support team for a return authorization number before sending any items back.</p>
+        </div>
+
+        <div class="section">
+            <h2>Refund & Dispute Policy</h2>
+            <p>Refunds are processed within 7-10 business days upon receiving the returned item. If you encounter issues with your purchase, contact us promptly, and we will work to resolve disputes amicably.</p>
+        </div>
+
+        <div class="section">
+            <h2>Cancellation Policy</h2>
+            <p>Orders can be canceled within 24 hours of placement. Contact customer service with your order number to initiate a cancellation.</p>
+        </div>
+
+        <div class="section">
+            <h2>Legal or Export Restrictions</h2>
+            <p>We comply with all applicable export laws and regulations. Certain items may not be available for shipping to restricted countries or regions.</p>
+        </div>
+
+        <div class="section">
+            <h2>Terms & Conditions of Promotions</h2>
+            <p>Promotions are valid for a limited time only and cannot be combined with other offers. Terms may vary; please refer to the specific promotion details for full terms and conditions.</p>
+        </div>
+    </div>
 </body>
 </html>
+</body>
+</html>
+
